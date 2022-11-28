@@ -18,6 +18,7 @@ RUN pip install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry add uvicorn
 RUN poetry install
+EXPOSE 8080
 CMD ["uvicorn", "modelserver.api:app", "--port", "8080" , "--host", "0.0.0.0"]
 
 #RUN cp -R ./model ./modelserver/modelserver
